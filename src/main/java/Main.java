@@ -30,8 +30,12 @@ public class Main {
          }
          System.out.println(path);
          if("/".equals(path) || path.contains("/echo/")) {
-             String str= path.substring(6);
-             int len= str.length();
+             String str="/";
+             int len=0;
+             if(path.contains("/echo/")) {
+                 str = path.substring(6);
+                 len = str.length();
+             }
              System.out.println(str+" "+len);
              String responseBody= "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: "+len+"\r\n\r\n"+str;
              System.out.println(responseBody);
