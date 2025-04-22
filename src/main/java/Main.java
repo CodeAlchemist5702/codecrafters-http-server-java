@@ -27,6 +27,7 @@ public class Main {
                  path = parts[1];
              }
          }
+         System.out.println(path);
          if("/".equals(path)) {
              socket.getOutputStream().write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
          }
