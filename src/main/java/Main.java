@@ -33,7 +33,7 @@ public class Main {
              String str= path.substring(6);
              int len= str.length();
              System.out.println(str+" "+len);
-             String responseBody= "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: "+len+"\r\n\r\nabc";
+             String responseBody= "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: "+len+"\r\n\r\n"+str;
              System.out.println(responseBody);
              socket.getOutputStream().write(responseBody.getBytes());
          }
