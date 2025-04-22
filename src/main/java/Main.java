@@ -44,7 +44,7 @@ public class Main {
              System.out.println(responseBody);
              socket.getOutputStream().write(responseBody.getBytes());
          }
-         else if("user-agent".equals(path)){
+         else if("/user-agent".equals(path)){
              String line;
              while ((line=br.readLine())!=null && !line.isEmpty()){
                  String []headerParts = line.split(":",2);
