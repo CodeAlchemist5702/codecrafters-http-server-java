@@ -21,8 +21,10 @@ public class Main {
          BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
          String requestLine = br.readLine();
          String path ="/";
+         System.out.println(requestLine);
          if(requestLine!=null){
              String [] parts = requestLine.split("");
+             System.out.println(parts);
              if (parts.length >= 2) {
                  path = parts[1];
              }
