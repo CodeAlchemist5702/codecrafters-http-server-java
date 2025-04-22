@@ -29,8 +29,13 @@ public class Main {
              }
          }
          System.out.println(path);
-         if("/".equals(path)) {
-             socket.getOutputStream().write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
+         if("/".equals(path) || path.contains("/echo/")) {
+             String str= path.substring(6);
+             int len= str.length();
+             System.out.println(str+" "+len);
+             String responseBody= "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: "+len+"\r\n\r\nabc";
+             System.out.println(responseBody);
+             socket.getOutputStream().write(responseBody.getBytes());
          }
          else{
              socket.getOutputStream().write("HTTP/1.1 404 Not Found\r\n\r\n".getBytes());
