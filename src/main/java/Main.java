@@ -23,8 +23,7 @@ public class Main {
          String path ="/";
          System.out.println(requestLine);
          if(requestLine!=null){
-             String [] parts = requestLine.split("");
-             System.out.println(parts);
+             String [] parts = requestLine.split(" ");
              if (parts.length >= 2) {
                  path = parts[1];
              }
